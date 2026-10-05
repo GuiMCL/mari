@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma carta romântica para você</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="ambient-glow"></div>
+
+    <main class="scene-container">
+        <header class="scene-header" id="scene-header">
+            <h1 class="catchy-title font-cursive">Uma carta do meu coração</h1>
+            <p class="catchy-subtitle font-serif-romantic">escrita especialmente para você</p>
+        </header>
+
+        <div class="perspective-container">
+
+            <div id="envelope" class="envelope-wrapper pulse-ambient">
+
+                <div class="envelope-back">
+                    <div class="envelope-back-pattern"></div>
+                    <div class="envelope-back-shadow"></div>
+                </div>
+
+                <div id="letter" class="letter-card">
+
+                    <div class="letter-top-bar">
+                        <div class="letter-accent-top">
+                            <span class="accent-line"></span>
+                            <i class="fa-solid fa-heart accent-heart"></i>
+                            <span class="accent-line"></span>
+                        </div>
+                        <span class="page-indicator" id="pageIndicator">Página 1 de 3</span>
+                        <button class="letter-close-btn" id="btnCloseEnvelopeTop" title="Fechar e selar o envelope"
+                            aria-label="Fechar envelope">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div id="letter-content" class="letter-content letter-scroll">
+
+                        <article class="letter-page active" data-page="1">
+                            <h2 class="letter-salutation font-cursive">Meu amor,</h2>
+                            <p class="letter-paragraph font-serif-romantic">
+                                Você se tornou a minha pausa favorita. Ainda me lembro
+                                do momento exato em que você entrou na minha vida do nada, foi como se todo o barulho 
+                                desaparecesse , eu real achava que você não queria algo a mais e que você nao gostava de mim 
+                            </p>
+                            <p class="letter-paragraph font-serif-romantic">
+                                Mas de certa forma , cade vez que a gente se encontrava , eu sentia cada vez mais admiriação por você.
+                            </p>
+                        </article>
+
+                        <article class="letter-page" data-page="2">
+                            <p class="letter-paragraph font-serif-romantic">
+                                Obrigado pelo conforto silencioso nos meus dias mais difíceis, pelas risadas espontâneas nos
+                                dias comuns e pelo jeito tranquilo como você transforma momentos simples em memórias que vou guardar para sempre.
+                            </p>
+                            <p class="letter-paragraph font-serif-romantic">
+                                Você me ensinou como é sentir-se em casa novamente não em um lugar, mas em uma pessoa.
+                                Obrigado por tudo meu amor.
+                            </p>
+                        </article>
+
+                        <article class="letter-page" data-page="3">
+                            <p class="letter-paragraph font-serif-romantic">
+                               Voce é incrivel e eu te amo muito ❤️
+                            </p>
+                            <div class="letter-sign-section">
+                                <span class="letter-date">05 OUT </span>
+                                <div class="letter-sign-box">
+                                    <span class="letter-sign-text font-serif-romantic">,</span>
+                                    <span class="letter-sign font-cursive">Guilherme o melhor kk ❤️</span>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <footer class="letter-footer">
+                        <button class="nav-btn" id="prevBtn" disabled aria-label="Página anterior">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>Anterior</span>
+                        </button>
+
+                        <button class="nav-btn close-btn" id="btnCloseEnvelope" aria-label="Fechar e selar o envelope">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Fechar</span>
+                        </button>
+
+                        <button class="nav-btn primary" id="nextBtn" aria-label="Próxima página">
+                            <span id="nextBtnText">Próxima página</span>
+                            <i id="nextBtnIcon" class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </footer>
+
+                </div>
+
+                <div class="flap flap-left"></div>
+                <div class="flap flap-right"></div>
+                <div class="flap flap-bottom"></div>
+
+                <div id="top-flap" class="flap flap-top">
+                    <div class="flap-top-overlay"></div>
+                </div>
+
+                <div id="wax-seal" class="wax-seal" role="button" aria-label="Abrir carta">
+                    <div class="wax-seal-inner">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <p id="open-hint" class="open-hint font-serif-romantic">Toque no selo para abrir</p>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
